@@ -262,7 +262,7 @@ function run(
     let args;
     command = "git";
     args = ["clone", "--quiet"].concat([
-      "git@github.com:dataverse-os/create-dataverse-app.git",
+      "https://github.com/dataverse-os/create-dataverse-app.git",
       ".",
     ]);
     const child = spawn(command, args, { stdio: "inherit" });
@@ -638,6 +638,10 @@ function checkIsGitInstalled() {
     gitVersion = execSync("git --version").toString().trim();
   } catch (err) {
     // ignore
+    console.log(
+      chalk.red("Git is not installed. Please install git and try again.")
+    );
+    process.exit(1);
   }
   return gitVersion;
 }
