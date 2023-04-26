@@ -95,7 +95,7 @@ function init() {
   checkForLatestVersion()
     .catch(() => {
       try {
-        return execSync("npm view @dataverse/create-dataverse-app version")
+        return execSync("npm view create-dataverse-app version")
           .toString()
           .trim();
       } catch (e) {
@@ -421,7 +421,7 @@ function checkForLatestVersion() {
   return new Promise((resolve, reject) => {
     https
       .get(
-        "https://registry.npmjs.org/-/package/@dataverse/create-dataverse-app/dist-tags",
+        "https://registry.npmjs.org/-/package/create-dataverse-app/dist-tags",
         (res) => {
           if (res.statusCode === 200) {
             let body = "";
