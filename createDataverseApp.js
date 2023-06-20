@@ -141,14 +141,14 @@ function createApp(name, verbose, version, template, useYarn, usePnp) {
   const unsupportedNodeVersion = !semver.satisfies(
     // Coerce strings with metadata (i.e. `15.0.0-nightly`).
     semver.coerce(process.version),
-    ">=14"
+    ">=16"
   );
 
   if (unsupportedNodeVersion) {
     console.log(
       chalk.yellow(
         `You are using Node ${process.version} so the project will be bootstrapped with an old unsupported version of tools.\n\n` +
-          `Please update to Node 14 or higher for a better, fully supported experience.\n`
+          `Please update to Node 16 or higher for a better, fully supported experience.\n`
       )
     );
     process.exit(1);
@@ -237,13 +237,19 @@ function createApp(name, verbose, version, template, useYarn, usePnp) {
     console.log();
     console.log(chalk.green("Done!"));
     console.log();
-    console.log("To get started, run:");
+    console.log("To get started:");
     console.log();
     console.log("cd", appName);
     console.log();
-    console.log("pnpm install");
+    console.log("add your data models under the models folder");
     console.log();
-    console.log("pnpm dev");
+    console.log("configure your app in the dataverse.config.ts file");
+    console.log();
+    console.log("set your private key in the .env file, then run");
+    console.log();
+    console.log("npm install");
+    console.log();
+    console.log("npm dev");
   });
 }
 
