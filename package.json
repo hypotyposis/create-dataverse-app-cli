@@ -1,6 +1,6 @@
 {
   "name": "create-dataverse-app",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "npx create-dataverse-app my-app",
   "main": "index.js",
   "scripts": {

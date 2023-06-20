@@ -247,9 +247,9 @@ function createApp(name, verbose, version, template, useYarn, usePnp) {
     console.log();
     console.log("set your private key in the .env file, then run");
     console.log();
-    console.log("npm install");
+    console.log("pnpm install");
     console.log();
-    console.log("npm dev");
+    console.log("pnpm dev");
   });
 }
 
